@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    line-height: 1.6;
+}
+
+.main_Container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #236ef0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.navbar form {
+    display: flex;
+    align-items: center;
+}
+
+.navbar input {
+    padding: 10px 15px;
+    border: 1px solid #111;
+    border-right: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 250px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    outline: 0;
+}
+
+
+
+.navbar button {
+    padding: 12px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: 0;
+}
+
+.navbar button:hover {
+    background-color: #357abd;
+}
+
+
+
+
+
+.mealsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.meal {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.meal:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.meal img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.meal:hover img {
+    transform: scale(1.05);
+}
+
+.meal h3 {
+    padding: 15px;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.meal:hover h3 {
+    background-color: #f0f0f0;
+}
+
+
+.error {
+    background-color: #ffdddd;
+    color: #f44336;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+
+
+
+    .mealsContainer {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .meal img {
+        height: 200px;
+    }
+
+    form {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        width: 250px;
+
+        input {
+            width: 40%;
+        }
+
+        button {
+            width: 30%;
+            ;
+        }
+    }
+}
+
+
+.no-meals {
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modalContent img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.modalContent ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
